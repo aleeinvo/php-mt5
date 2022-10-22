@@ -2,29 +2,29 @@
 
 namespace Ram\WIK;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Handler\CurlHandler;
-use GuzzleHttp\HandlerStack;
-use GuzzleLogMiddleware\LogMiddleware;
 use JsonMapper;
-use Monolog\Handler\StreamHandler;
 use Monolog\Level;
 use Monolog\Logger;
+use GuzzleHttp\Client;
+use GuzzleHttp\HandlerStack;
+use Monolog\Handler\StreamHandler;
+use GuzzleHttp\Handler\CurlHandler;
 use Phpfastcache\Helper\Psr16Adapter;
+use GuzzleLogMiddleware\LogMiddleware;
 use Psr\Http\Message\RequestInterface;
-use Ram\WIK\Mt5Request\ChangeCreditRequest;
-use Ram\WIK\Mt5Request\ChangePasswordRequest;
-use Ram\WIK\Mt5Request\CreateAccountRequest;
+use Ram\WIK\Mt5Response\Groups\GroupList;
 use Ram\WIK\Mt5Request\DealHistoryRequest;
+use Ram\WIK\Mt5Request\ChangeCreditRequest;
 use Ram\WIK\Mt5Request\OrderHistoryRequest;
-use Ram\WIK\Mt5Response\AccountInfo\AccountInfoData;
+use Ram\WIK\Mt5Request\CreateAccountRequest;
+use Ram\WIK\Mt5Request\ChangePasswordRequest;
 use Ram\WIK\Mt5Response\Accounts\AccountList;
 use Ram\WIK\Mt5Response\Balances\BalanceList;
 use Ram\WIK\Mt5Response\ChangeCredit\ChangeCredit;
-use Ram\WIK\Mt5Response\ChangePassword\ChangePassword;
-use Ram\WIK\Mt5Response\CreateAccount\CreateAccount;
-use Ram\WIK\Mt5Response\Groups\GroupList;
 use Ram\WIK\Mt5Response\OrderHistory\OrderHistory;
+use Ram\WIK\Mt5Response\AccountInfo\AccountInfoData;
+use Ram\WIK\Mt5Response\CreateAccount\CreateAccount;
+use Ram\WIK\Mt5Response\ChangePassword\ChangePassword;
 
 class Mt5Client
 {
